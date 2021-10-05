@@ -16,12 +16,18 @@ jobs:
       - name: Build the backend Docker image
         run:
           docker build backend --file backend/dockerfile --tag firewherebackend:${{ github.run_number }}
+      - name: Tag backend Docker image 
+        run:
+          docker tag firewherebackend:${{ github.run_number }} svpseceng/test:firewherebackend_v${{ github.run_number }}
       - name: Publish backend Docker image to docker hub
         run:
-          docker push firewherebackend:${{ github.run_number }}    
+          docker push svpseceng/test:firewherebackend_v${{ github.run_number }}
       - name: Build the front Docker image
         run:
           docker build frontend --file frontend/dockerfile --tag firewherefrontend:${{ github.run_number }}
+      - name: Tag frontend Docker image 
+        run:
+          docker tag firewherefrontend:${{ github.run_number }} svpseceng/test:firewherefrontend_v${{ github.run_number }}
       - name: Publish frontend Docker image to docker hub
         run:
-          docker push firewherefrontend:${{ github.run_number }}
+          docker push svpseceng/test:firewherefrontend_v${{ github.run_number }}
