@@ -10,5 +10,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Build the backend Docker image
         run: |
-          docker build backend --file Dockerfile --tag firewherebackend:${{ github.run_number }}
-          docker build front --file Dockerfile --tag firewherefrontend:${{ github.run_number }}
+          docker build backend --file backend/Dockerfile --tag firewherebackend:${{ github.run_number }}
+          docker build frontend --file frontend/Dockerfile --tag firewherefrontend:${{ github.run_number }}
