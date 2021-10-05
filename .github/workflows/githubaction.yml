@@ -1,0 +1,14 @@
+name: Dockerize
+on: push
+
+jobs:
+  docker-backend:
+    name: Build docker container for backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build the backend Docker image
+        run: |
+          docker build backend --file Dockerfile --tag firewherebackend:${{ github.run_number }}
+          docker build front --file Dockerfile --tag firewherefrontend:${{ github.run_number }}
