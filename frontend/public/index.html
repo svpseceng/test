@@ -434,7 +434,7 @@
                     region,
 					role,
                 });
-            const result = await fetch('https://firewhere-backend.herokuapp.com/api/adduserdetail', {
+            const result = await fetch('https://backend-fw.herokuapp.com/api/adduserdetail', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -459,7 +459,7 @@
             const username = document.getElementById('username').value;
             const password = document.getElementById('passlogin').value;
 
-            const result = await fetch('https://firewhere-backend.herokuapp.com/api/login', {
+            const result = await fetch('https://backend-fw.herokuapp.com/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -481,17 +481,17 @@
         // humidity data
         $(humidity_table).bootstrapTable({
             classes: 'table',
-            url: 'https://firewhere-backend.herokuapp.com/api/gethumidity'
+            url: 'https://backend-fw.herokuapp.com/api/gethumidity'
         });
         // temperature data
         $(temperature_table).bootstrapTable({
             classes: 'table',
-            url: 'https://firewhere-backend.herokuapp.com/api/gettemperature'
+            url: 'https://backend-fw.herokuapp.com/api/gettemperature'
         });
         // season data
         $(season_table).bootstrapTable({
             classes: 'table',
-            url: 'https://firewhere-backend.herokuapp.com/api/getseason'
+            url: 'https://backend-fw.herokuapp.com/api/getseason'
         });
     </script>
 

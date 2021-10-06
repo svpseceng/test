@@ -118,7 +118,7 @@ function request(params) {
 
 // request from cloud
 request({
-  url: 'https://firewhere-backend.herokuapp.com/api/getcard',
+  url: 'https://backend-fw.herokuapp.com/api/getcard',
   callBack: res => {
     card_data = res.data
   }
@@ -410,7 +410,7 @@ navigator.geolocation.getCurrentPosition((res) => {
   currentLocation = pos
 
   let ajax_post_param_Arr =[
-      {url: "https://firewhere-backend.herokuapp.com/api/sms", data: {message: '[FireWhere] ' + ' Current bush fire level in your area is "low risk of bush fire"' 
+      {url: "https://backend-fw.herokuapp.com/api/sms", data: {message: '[FireWhere] ' + ' Current bush fire level in your area is "low risk of bush fire"' 
       // + $('#message').text()
       ,to: '+61415140829' }},
       {
